@@ -1,0 +1,9 @@
+@use "../../styles/partials/variables" as *;
+
+.tag__btn {
+  background-color: $alttext;
+  color: $primaryaccent;
+  border: $primaryaccent;
+  border-radius: 1rem;
+  font-family: "Outfit";
+}

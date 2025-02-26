@@ -2,9 +2,20 @@ import "../Header/Header.scss";
 
 export default function Header() {
   return (
-    <nav className="nav">
-      <h1>Snaps</h1>
-      <button>filter</button>
-    </nav>
+    <>
+      <nav className="nav">
+        <h3>Snaps</h3>
+        <button className="filter__btn">Filter</button>
+      </nav>
+      <p className="hero__title">Our Mission;</p>
+      <p className="hero__body">
+        Provide photographers a space to share photos of the neighborhoods they
+        cherish,
+        <span className="hero__ body hero__body--italic">
+          {" "}
+          expressed in their unique style.
+        </span>
+      </p>
+    </>
   );
 }
