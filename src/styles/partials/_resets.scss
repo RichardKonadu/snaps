@@ -1,0 +1,11 @@
+@use "../partials/variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primarybackground;
+}
