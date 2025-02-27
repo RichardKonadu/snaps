@@ -1,0 +1,27 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/resets";
+
+.card {
+  background-color: $bordercolor;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+
+  &__image {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: row;
+
+    &__item {
+      background-color: white;
+      border: solid 1px $bordercolor;
+      border-radius: 10px;
+      margin: 0.5rem;
+      padding: 0.4rem;
+      font-size: 0.8rem;
+    }
+  }
+}

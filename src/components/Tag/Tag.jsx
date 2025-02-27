@@ -3,7 +3,7 @@ import "./Tag.scss";
 export default function Tag({ location }) {
   return (
     <>
-      <button className="tag__btn">{location}</button>
+      <li className="tag__btn">{location}</li>
     </>
   );
 }

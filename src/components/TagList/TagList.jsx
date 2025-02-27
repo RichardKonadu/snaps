@@ -1,8 +1,9 @@
 import "./TagList.scss";
 import tags from "../../data/tags.json";
 import Tag from "../Tag/Tag";
+import Header from "../Header/Header";
 
-export default function TagList() {
+export default function TagDrawer({}) {
   return (
     <section className="tags">
       <h2>Filters</h2>
