@@ -1,9 +1,16 @@
 import "./Tag.scss";
 
-export default function Tag({ location }) {
+export default function Tag({ location, handleSelectedTag }) {
   return (
     <>
-      <li className="tag__btn">{location}</li>
+      <li
+        onClick={() => {
+          handleSelectedTag(location);
+        }}
+        className="tag__btn"
+      >
+        {location}
+      </li>
     </>
   );
 }

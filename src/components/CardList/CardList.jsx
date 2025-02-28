@@ -1,12 +1,19 @@
 import Card from "../Card/Card";
 import "./CardList.scss";
-import photoData from "../../data/photos.json";
 
-export default function CardList() {
+export default function CardList({ photosData, selectedTag }) {
+  const filteredPhotos = photosData.filter((photo) => {
+    if (!selectedTag) {
+      return true;
+    } else {
+      return photo.tags.includes(selectedTag);
+    }
+  });
+
   return (
     <div className="cardlist">
-      {photoData.map((photo) => {
-        return <Card key={photo.id} photo={photo} />;
+      {filteredPhotos.map((photo, id) => {
+        return <Card key={id} photo={photo} />;
       })}
     </div>
   );

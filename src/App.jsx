@@ -1,11 +1,17 @@
 import { useState } from "react";
 import "./App.scss";
-import CardList from "./components/CardList/CardList";
 import Header from "./components/Header/Header";
-import TagList from "./components/TagList/TagList";
+import photoData from "./data/photos.json";
+import Content from "./components/Content/Content";
 
 function App() {
   const [tagsVisible, setTagsVisible] = useState(false);
+  const [photosData, setPhotosData] = useState(photoData);
+  const [selectedTag, setSelectedTag] = useState("");
+
+  const handleSelectedTag = (tag) => {
+    setSelectedTag(tag);
+  };
 
   const handleTagsVisbility = () => {
     setTagsVisible(!tagsVisible);
@@ -14,8 +20,13 @@ function App() {
   return (
     <>
       <Header handleTagsVisbility={handleTagsVisbility} />
-      {tagsVisible ? <TagList /> : <></>}
-      <CardList />
+      <Content
+        tagsVisible={tagsVisible}
+        photosData={photosData}
+        selectedTag={selectedTag}
+        handleSelectedTag={handleSelectedTag}
+      />
+      {/* footer */}
     </>
   );
 }
