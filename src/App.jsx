@@ -3,6 +3,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import photoData from "./data/photos.json";
 import Content from "./components/Content/Content";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [tagsVisible, setTagsVisible] = useState(false);
@@ -35,7 +36,7 @@ function App() {
         selectedTag={selectedTag}
         handleSelectedTag={handleSelectedTag}
       />
-      {/* footer */}
+      <Footer />
     </>
   );
 }

@@ -1,9 +1,14 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/resets";
 
 .tags {
   background-color: $altbackground;
   padding: 1rem;
+
+  @include desktop {
+    min-width: 30%;
+  }
 
   &__list {
     display: flex;

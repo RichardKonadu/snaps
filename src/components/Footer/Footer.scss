@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+
+.footer {
+  padding: 1rem;
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__content {
+    color: $primarytext;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    margin-left: 0;
+    padding-left: 0;
+    align-items: center;
+
+    &__icon {
+      width: 4rem;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-family: "Newsreader";
+    font-weight: 100;
+  }
+}

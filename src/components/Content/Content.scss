@@ -1,3 +1,15 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.content {
+  &__wrapper {
+    @include desktop {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+}
+
 .hero {
   &__title {
     padding: 0 2rem;
