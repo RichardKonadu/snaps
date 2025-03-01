@@ -7,35 +7,134 @@ import Pinterest from "../../assets/images/icons/Pinterest.svg";
 export default function Footer() {
   return (
     <div className="footer">
-      <h2 className="footer__title">Snaps</h2>
-      <p className="footer__content">
-        For Photographers <br /> Hire Talent <br />
-        Inspiration
-      </p>
-      <p className="footer__content">
-        About <br /> Careers <br />
-        Support
-      </p>
+      <div className="footer__wrapper">
+        <h2 className="footer__title">Snaps</h2>
+        <div className="footer__content__wrapper">
+          <p className="footer__content">
+            For photographers <br /> Hire talent <br />
+            Inspiration
+          </p>
+          <p className="footer__content">
+            About <br /> Careers <br />
+            Support
+          </p>
+          <ul className="footer__social__desktop">
+            <li>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                className="footer__social__icon"
+              >
+                <img
+                  className="footer__social__icon__image
+            "
+                  src={Facebook}
+                  alt="Facebook"
+                />
+              </a>
+            </li>
+            <li>
+              {" "}
+              <a
+                href="https://www.twitter.com/"
+                target="_blank"
+                className="footer__social__icon"
+              >
+                <img
+                  className="footer__social__icon__image
+            "
+                  src={X}
+                  alt="Twitter"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                className="footer__social__icon"
+              >
+                <img
+                  className="footer__social__icon__image
+            "
+                  src={Instagram}
+                  alt="Instagram"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.pinterest.com/"
+                target="_blank"
+                className="footer__social__icon"
+              >
+                <img
+                  className="footer__social__icon__image
+            "
+                  src={Pinterest}
+                  alt="Pinterest"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <ul className="footer__social">
         <li>
-          <a href="#" className="footer__social__icon">
-            <img src={Facebook} alt="" />
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            className="footer__social__icon"
+          >
+            <img
+              className="footer__social__icon__image
+            "
+              src={Facebook}
+              alt="Facebook"
+            />
           </a>
         </li>
         <li>
           {" "}
-          <a href="#" className="footer__social__icon">
-            <img src={X} alt="" />
+          <a
+            href="https://www.twitter.com/"
+            target="_blank"
+            className="footer__social__icon"
+          >
+            <img
+              className="footer__social__icon__image
+            "
+              src={X}
+              alt="Twitter"
+            />
           </a>
         </li>
         <li>
-          <a href="#" className="footer__social__icon">
-            <img src={Instagram} alt="" />
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            className="footer__social__icon"
+          >
+            <img
+              className="footer__social__icon__image
+            "
+              src={Instagram}
+              alt="Instagram"
+            />
           </a>
         </li>
         <li>
-          <a href="#" className="footer__social__icon">
-            <img src={Pinterest} alt="" />
+          <a
+            href="https://www.pinterest.com/"
+            target="_blank"
+            className="footer__social__icon"
+          >
+            <img
+              className="footer__social__icon__image
+            "
+              src={Pinterest}
+              alt="Pinterest"
+            />
           </a>
         </li>
       </ul>

@@ -1,5 +1,4 @@
 import "../Header/Header.scss";
-import icon from "../../assets/images/icons/filter.svg";
 import FilterSvg from "../FilterSvg/FilterSvg";
 
 export default function Header({ handleTagsVisbility, tagsVisible }) {

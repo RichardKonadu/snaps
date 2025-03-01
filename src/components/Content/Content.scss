@@ -12,14 +12,24 @@
 
 .hero {
   &__title {
-    padding: 0 2rem;
+    padding: 1rem 2rem 1rem 2rem;
     font-family: "Newsreader";
-    font-weight: 300;
+    font-weight: 200;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include desktop {
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+    }
   }
 
   &__body {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     padding: 0 2rem;
     font-family: "Newsreader";
     font-weight: 300;
@@ -30,6 +40,11 @@
       font-family: "Newsreader";
       font-weight: 300;
       font-style: italic;
+    }
+
+    @include tablet {
+      font-size: 3.25rem;
+      line-height: 4.125rem;
     }
   }
 }

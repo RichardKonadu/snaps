@@ -9,7 +9,7 @@
   border: solid 2px $bordercolor;
 
   @include tablet {
-    width: 40%;
+    width: 48%;
   }
 
   &__image {
@@ -30,6 +30,7 @@
     padding: 0.5rem;
     background-color: $altbackground;
     border-radius: 10px 0px 0px;
+    font-weight: 400;
   }
 
   &__tags {
@@ -38,11 +39,13 @@
 
     &__item {
       background-color: white;
-      border: solid 1px $bordercolor;
+      border: solid 2px $bordercolor;
       border-radius: 10px;
       margin: 0.5rem;
       padding: 0.4rem;
-      font-size: 0.8rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1rem;
     }
   }
 }
