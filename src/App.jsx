@@ -10,7 +10,13 @@ function App() {
   const [selectedTag, setSelectedTag] = useState("");
 
   const handleSelectedTag = (tag) => {
-    setSelectedTag(tag);
+    setSelectedTag(selectedTag === tag ? "" : tag);
+
+    if (selectedTag === tag) {
+      setSelectedTag("");
+    } else {
+      setSelectedTag(tag);
+    }
   };
 
   const handleTagsVisbility = () => {
@@ -19,7 +25,10 @@ function App() {
 
   return (
     <>
-      <Header handleTagsVisbility={handleTagsVisbility} />
+      <Header
+        handleTagsVisbility={handleTagsVisbility}
+        tagsVisible={tagsVisible}
+      />
       <Content
         tagsVisible={tagsVisible}
         photosData={photosData}

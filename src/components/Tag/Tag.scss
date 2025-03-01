@@ -1,10 +1,16 @@
 @use "../../styles/partials/variables" as *;
 
 .tag__btn {
-  background-color: $alttext;
-  color: $primaryaccent;
-  border: $primaryaccent;
-  border-radius: 1rem;
+  background-color: #ffffff;
+  color: #1e6655;
+  border: #1e6655 solid 1px;
+  border-radius: 10px;
   font-family: "Outfit";
-  padding: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0.3rem;
+
+  &--active {
+    background-color: $primaryaccent;
+    color: $alttext;
+  }
 }

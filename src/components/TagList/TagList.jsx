@@ -2,7 +2,7 @@ import "./TagList.scss";
 import tags from "../../data/tags.json";
 import Tag from "../Tag/Tag";
 
-export default function TagList({ handleSelectedTag }) {
+export default function TagList({ handleSelectedTag, selectedTag }) {
   return (
     <section className="tags">
       <h2>Filters</h2>
@@ -13,6 +13,7 @@ export default function TagList({ handleSelectedTag }) {
               handleSelectedTag={handleSelectedTag}
               key={index}
               location={tag}
+              selectedTag={selectedTag}
             />
           );
         })}

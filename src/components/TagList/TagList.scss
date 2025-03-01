@@ -2,11 +2,11 @@
 @use "../../styles/partials/resets";
 
 .tags {
-  background-color: $bordercolor;
+  background-color: $altbackground;
+  padding: 1rem;
 
   &__list {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
   }
