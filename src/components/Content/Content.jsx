@@ -18,7 +18,7 @@ export default function Content({
       ) : (
         <></>
       )}
-      <div className="test">
+      <div>
         <p className="hero__title">Our Mission;</p>
         <h1 className="hero__body">
           Provide photographers a space to share photos of the neighborhoods

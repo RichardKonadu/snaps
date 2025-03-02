@@ -42,10 +42,15 @@
       border: solid 2px $bordercolor;
       border-radius: 10px;
       margin: 0.5rem;
-      padding: 0.4rem;
+      padding: 6px;
       font-size: 1rem;
       font-weight: 400;
       line-height: 1rem;
+
+      @include tablet {
+        margin: 16px 8px;
+        padding: 8px 12px;
+      }
     }
   }
 }

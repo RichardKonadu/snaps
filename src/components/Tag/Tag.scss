@@ -1,4 +1,6 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets";
 
 .tag__btn {
   background-color: #ffffff;
@@ -6,9 +8,13 @@
   border: #1e6655 solid 1px;
   border-radius: 10px;
   font-family: "Outfit";
-  padding: 0.5rem 0.75rem;
+  padding: 6px 8px;
   margin: 0.3rem;
   font-size: 1rem;
+
+  @include tablet {
+    padding: 8px 12px;
+  }
 
   &--active {
     background-color: $primaryaccent;

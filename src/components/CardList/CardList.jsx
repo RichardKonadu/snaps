@@ -12,8 +12,8 @@ export default function CardList({ photosData, selectedTag }) {
 
   return (
     <div className="cardlist">
-      {filteredPhotos.map((photo, id) => {
-        return <Card key={id} photo={photo} />;
+      {filteredPhotos.map((photo, index) => {
+        return <Card key={index} photo={photo} />;
       })}
     </div>
   );

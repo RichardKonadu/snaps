@@ -12,7 +12,7 @@ export default function TagList({ handleSelectedTag, selectedTag }) {
             <Tag
               handleSelectedTag={handleSelectedTag}
               key={index}
-              location={tag}
+              tag={tag}
               selectedTag={selectedTag}
             />
           );

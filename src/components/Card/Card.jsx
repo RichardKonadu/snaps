@@ -8,11 +8,14 @@ export default function Card({ photo }) {
         <img className="card__image" src={photo.photo} alt="" />
       </div>
       <ul className="card__tags">
-        {photo.tags.map((tag) => {
-          return <li className="card__tags__item">{tag}</li>;
+        {photo.tags.map((tag, index) => {
+          return (
+            <li key={index} className="card__tags__item">
+              {tag}{" "}
+            </li>
+          );
         })}
       </ul>
-      {/* <h3>name</h3> */}
     </article>
   );
 }

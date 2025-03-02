@@ -1,17 +1,15 @@
 import "./Tag.scss";
 
-export default function Tag({ location, handleSelectedTag, selectedTag }) {
+export default function Tag({ tag, handleSelectedTag, selectedTag }) {
   return (
     <>
       <li
         onClick={() => {
-          handleSelectedTag(location);
+          handleSelectedTag(tag);
         }}
-        className={`tag__btn ${
-          selectedTag === location ? "tag__btn tag__btn--active" : ""
-        }`}
+        className={`tag__btn ${selectedTag === tag ? "tag__btn--active" : ""}`}
       >
-        {location}
+        {tag}
       </li>
     </>
   );
