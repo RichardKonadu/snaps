@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import "./Card.scss";
 
-export default function Card({ photo }) {
+export default function Card({ photo, tagsVisible }) {
   return (
-    <article className="card">
+    <article className={`card ${tagsVisible ? "card__active" : ""}`}>
       <div className="card__image__wrapper">
         <p className="card__photographer">{photo.photographer}</p>
-        <img className="card__image" src={photo.photo} alt="" />
+        <Link key={photo.id} to={`/photo/${photo.id}`}>
+          <img className="card__image" src={photo.photo} alt="" />
+        </Link>
       </div>
       <ul className="card__tags">
         {photo.tags.map((tag, index) => {

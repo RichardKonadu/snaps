@@ -4,7 +4,6 @@ import "../Content/Content.scss";
 
 export default function Content({
   tagsVisible,
-  photosData,
   selectedTag,
   handleSelectedTag,
 }) {
@@ -28,7 +27,7 @@ export default function Content({
             expressed in their unique style.
           </span>
         </h1>
-        <CardList photosData={photosData} selectedTag={selectedTag} />
+        <CardList selectedTag={selectedTag} tagsVisible={tagsVisible} />
       </div>
     </div>
   );

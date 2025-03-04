@@ -1,44 +1,38 @@
 import { useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
-import photoData from "./data/photos.json";
-import Content from "./components/Content/Content";
 import Footer from "./components/Footer/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from "./pages/Homepage/Homepage";
+import PhotoPage from "./pages/PhotoPage/PhotoPage";
 
-function App() {
+export default function App() {
   const [tagsVisible, setTagsVisible] = useState(false);
-  const [photosData, setPhotosData] = useState(photoData);
-  const [selectedTag, setSelectedTag] = useState("");
-
-  const handleSelectedTag = (tag) => {
-    setSelectedTag(selectedTag === tag ? "" : tag);
-
-    if (selectedTag === tag) {
-      setSelectedTag("");
-    } else {
-      setSelectedTag(tag);
-    }
-  };
-
   const handleTagsVisbility = () => {
     setTagsVisible(!tagsVisible);
   };
 
   return (
     <>
-      <Header
-        handleTagsVisbility={handleTagsVisbility}
-        tagsVisible={tagsVisible}
-      />
-      <Content
-        tagsVisible={tagsVisible}
-        photosData={photosData}
-        selectedTag={selectedTag}
-        handleSelectedTag={handleSelectedTag}
-      />
-      <Footer />
+      <BrowserRouter>
+        <Header
+          handleTagsVisbility={handleTagsVisbility}
+          tagsVisible={tagsVisible}
+        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Homepage
+                tagsVisible={tagsVisible}
+                handleTagsVisbility={handleTagsVisbility}
+              />
+            }
+          />
+          <Route path="/photo/:photoId" element={<PhotoPage />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
-
-export default App;

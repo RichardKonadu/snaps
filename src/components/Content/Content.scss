@@ -46,5 +46,9 @@
       font-size: 3.25rem;
       line-height: 4.125rem;
     }
+
+    @include desktop {
+      width: 70%;
+    }
   }
 }
