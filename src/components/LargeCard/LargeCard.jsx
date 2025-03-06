@@ -54,7 +54,7 @@ export default function LargeCard() {
           <img src={like} alt="like button" />
           {singlePhoto.likes}
         </li>
-        <li>{date.toDateString()}</li>
+        <li>{date.toLocaleDateString()}</li>
       </ul>
       <p>
         Photo by {""}

@@ -1,12 +1,13 @@
 import "../Comment/Comment.scss";
 
 export default function Comment({ comment }) {
+  const date = new Date(comment.timestamp);
+
   return (
     <div className="comment">
-      <h3>3 comments</h3>
       <div className="comment__details">
         <p>{comment.name}</p>
-        <p>{comment.timestamp}</p>
+        <p>{date.toLocaleDateString()}</p>
       </div>
       {comment.comment}
     </div>

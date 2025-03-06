@@ -3,6 +3,12 @@ import FilterSvg from "../FilterSvg/FilterSvg";
 import { Link, useParams } from "react-router-dom";
 
 export default function Header({ handleTagsVisbility, tagsVisible }) {
+  const whichURL = window.location.toString();
+
+  if (whichURL.includes("photo")) {
+    console.log("this test has worked");
+  }
+
   return (
     <>
       <nav className="nav">
