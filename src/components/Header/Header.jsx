@@ -1,11 +1,14 @@
 import "../Header/Header.scss";
 import FilterSvg from "../FilterSvg/FilterSvg";
+import { Link, useParams } from "react-router-dom";
 
 export default function Header({ handleTagsVisbility, tagsVisible }) {
   return (
     <>
       <nav className="nav">
-        <h2 className="nav__title">Snaps</h2>
+        <Link to={"/"}>
+          <h2 className="nav__title">Snaps</h2>
+        </Link>
         <button
           className={`filter__btn ${tagsVisible ? "filter__btn--active" : ""}`}
           onClick={handleTagsVisbility}
