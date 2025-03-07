@@ -9,6 +9,8 @@ export default function Form({ fetchComments }) {
     comment: "",
   });
 
+  const [message, setMessage] = useState(false);
+
   const { photoId } = useParams();
 
   const postComment = async (name, comment) => {
@@ -17,7 +19,6 @@ export default function Form({ fetchComments }) {
         `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`,
         { name, comment }
       );
-      console.log("comment posted successfully");
     } catch (error) {
       throw error;
     }
@@ -30,13 +31,17 @@ export default function Form({ fetchComments }) {
     });
   };
 
-  //   can I do async await here?
+  //  how do I make it so the new comments show without the page refreshing
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.name || !formData.comment) {
+      setMessage("Please fill in all form fields");
+      return;
+    }
     setFormData({ name: "", comment: "" });
-    postComment(formData.name, formData.comment);
-    fetchComments();
+    await postComment(formData.name, formData.comment);
+    await fetchComments();
   };
 
   useEffect(() => {
@@ -64,6 +69,7 @@ export default function Form({ fetchComments }) {
         />
       </label>
       <button className="comment__form__btn">Submit</button>
+      <p>{message && message}</p>
     </form>
   );
 }

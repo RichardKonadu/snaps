@@ -7,7 +7,6 @@
   margin-bottom: 2rem;
   border-radius: 10px;
   border: solid 2px $bordercolor;
-  width: 70%;
 
   //   @include tablet {
   //     width: 48%;
@@ -65,5 +64,9 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 2rem;
+  }
+
+  &__likes {
+    gap: 1rem;
   }
 }

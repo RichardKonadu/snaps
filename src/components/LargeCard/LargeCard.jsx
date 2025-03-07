@@ -52,6 +52,7 @@ export default function LargeCard() {
       <ul className="photopage__card__ul__wrapper">
         <li>
           <img src={like} alt="like button" />
+
           {singlePhoto.likes}
         </li>
         <li>{date.toLocaleDateString()}</li>

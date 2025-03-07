@@ -1,13 +1,11 @@
 import "../Header/Header.scss";
-import FilterSvg from "../FilterSvg/FilterSvg";
-import { Link, useParams } from "react-router-dom";
+
+import { Link, useLocation } from "react-router-dom";
+import HomeNavButton from "../HomeNavButton/HomeNavButton";
+import PhotoNavButton from "../PhotoNavButton/PhotoNavButton";
 
 export default function Header({ handleTagsVisbility, tagsVisible }) {
-  const whichURL = window.location.toString();
-
-  if (whichURL.includes("photo")) {
-    console.log("this test has worked");
-  }
+  const location = useLocation();
 
   return (
     <>
@@ -15,20 +13,14 @@ export default function Header({ handleTagsVisbility, tagsVisible }) {
         <Link to={"/"}>
           <h2 className="nav__title">Snaps</h2>
         </Link>
-        <button
-          className={`filter__btn ${tagsVisible ? "filter__btn--active" : ""}`}
-          onClick={handleTagsVisbility}
-        >
-          <p
-            className={`filter__btn__title ${
-              tagsVisible ? "filter__btn__title--active" : ""
-            }`}
-            onClick={handleTagsVisbility}
-          >
-            Filters
-          </p>
-          <FilterSvg color={!tagsVisible ? "#1E6655" : "white"} />
-        </button>
+        {location.pathname !== "/" ? (
+          <PhotoNavButton />
+        ) : (
+          <HomeNavButton
+            handleTagsVisbility={handleTagsVisbility}
+            tagsVisible={tagsVisible}
+          />
+        )}
       </nav>
     </>
   );
