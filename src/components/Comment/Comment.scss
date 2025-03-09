@@ -1,12 +1,18 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .comment {
   border-top: solid 2px $bordercolor;
   padding-bottom: 1rem;
+
   &__details {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: $primaryaccent;
+  }
+
+  @include tablet {
+    font-size: 1.6rem;
   }
 }

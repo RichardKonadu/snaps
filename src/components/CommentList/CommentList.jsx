@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Comment from "../../components/Comment/Comment";
 import Form from "../Form/Form";
+import "../CommentList/CommentList.scss";
 
 const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
 
@@ -36,7 +37,7 @@ export default function CommentList() {
     <>
       <Form fetchComments={fetchComments} />
       <div className="comments__wrapper">
-        <h3>
+        <h3 className="comments__title">
           {comments.length > 1
             ? `${comments.length} Comments`
             : `${comments.length} Comment`}
