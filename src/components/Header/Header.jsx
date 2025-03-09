@@ -4,7 +4,10 @@ import { Link, useLocation } from "react-router-dom";
 import HomeNavButton from "../HomeNavButton/HomeNavButton";
 import PhotoNavButton from "../PhotoNavButton/PhotoNavButton";
 
-export default function Header({ handleTagsVisbility, tagsVisible }) {
+export default function Header({
+  handleTagsDrawerVisbility,
+  tagsDrawerVisible,
+}) {
   const location = useLocation();
 
   return (
@@ -17,8 +20,8 @@ export default function Header({ handleTagsVisbility, tagsVisible }) {
           <PhotoNavButton />
         ) : (
           <HomeNavButton
-            handleTagsVisbility={handleTagsVisbility}
-            tagsVisible={tagsVisible}
+            handleTagsDrawerVisbility={handleTagsDrawerVisbility}
+            tagsDrawerVisible={tagsDrawerVisible}
           />
         )}
       </nav>

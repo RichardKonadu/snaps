@@ -4,7 +4,7 @@ import "./CardList.scss";
 const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
 import axios from "axios";
 
-export default function CardList({ selectedTag, tagsVisible }) {
+export default function CardList({ selectedTag, tagsDrawerVisible }) {
   const [photosList, setPhotosList] = useState(null);
 
   const fetchPhotos = async () => {
@@ -37,7 +37,13 @@ export default function CardList({ selectedTag, tagsVisible }) {
   return (
     <div className="cardlist">
       {filteredPhotos.map((photo, index) => {
-        return <Card key={index} photo={photo} tagsVisible={tagsVisible} />;
+        return (
+          <Card
+            key={index}
+            photo={photo}
+            tagsDrawerVisible={tagsDrawerVisible}
+          />
+        );
       })}
     </div>
   );

@@ -1,21 +1,24 @@
 import FilterSvg from "../FilterSvg/FilterSvg";
 import "../HomeNavButton/HomeNavButton.scss";
 
-export default function HomeNavButton({ handleTagsVisbility, tagsVisible }) {
+export default function HomeNavButton({
+  handleTagsDrawerVisbility,
+  tagsDrawerVisible,
+}) {
   return (
     <button
-      className={`filter-btn ${tagsVisible ? "filter-btn--active" : ""}`}
-      onClick={handleTagsVisbility}
+      className={`filter-btn ${tagsDrawerVisible ? "filter-btn--active" : ""}`}
+      onClick={handleTagsDrawerVisbility}
     >
       <p
         className={`filter-btn__title ${
-          tagsVisible ? "filter-btn__title--active" : ""
+          tagsDrawerVisible ? "filter-btn__title--active" : ""
         }`}
-        onClick={handleTagsVisbility}
+        onClick={handleTagsDrawerVisbility}
       >
         Filters
       </p>
-      <FilterSvg color={!tagsVisible ? "#1E6655" : "white"} />
+      <FilterSvg color={!tagsDrawerVisible ? "#1E6655" : "white"} />
     </button>
   );
 }

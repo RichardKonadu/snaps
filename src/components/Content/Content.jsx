@@ -3,13 +3,13 @@ import TagList from "../TagList/TagList";
 import "../Content/Content.scss";
 
 export default function Content({
-  tagsVisible,
+  tagsDrawerVisible,
   selectedTag,
   handleSelectedTag,
 }) {
   return (
     <div className="content__wrapper">
-      {tagsVisible ? (
+      {tagsDrawerVisible ? (
         <TagList
           handleSelectedTag={handleSelectedTag}
           selectedTag={selectedTag}
@@ -17,17 +17,21 @@ export default function Content({
       ) : (
         <></>
       )}
-      <div>
+      <div className="hero">
         <p className="hero__title">Our Mission;</p>
         <h1 className="hero__body">
           Provide photographers a space to share photos of the neighborhoods
           they cherish,
-          <span className="hero__ body hero__body--italic">
+          <span className="hero__body hero__body--italic">
             {" "}
+            {""}
             expressed in their unique style.
           </span>
         </h1>
-        <CardList selectedTag={selectedTag} tagsVisible={tagsVisible} />
+        <CardList
+          selectedTag={selectedTag}
+          tagsDrawerVisible={tagsDrawerVisible}
+        />
       </div>
     </div>
   );

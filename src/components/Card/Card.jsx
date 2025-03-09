@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Card.scss";
 
-export default function Card({ photo, tagsVisible }) {
+export default function Card({ photo, tagsDrawerVisible }) {
   return (
-    <article className={`card ${tagsVisible ? "card__active" : ""}`}>
+    <article className={`card ${tagsDrawerVisible ? "card__active" : ""}`}>
       <div className="card__image__wrapper">
         <p className="card__photographer">{photo.photographer}</p>
         <Link key={photo.id} to={`/photo/${photo.id}`}>

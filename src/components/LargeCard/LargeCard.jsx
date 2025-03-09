@@ -50,14 +50,22 @@ export default function LargeCard() {
         })}
       </ul>
       <ul className="photopage__card__ul__wrapper">
-        <li>
-          <img src={like} alt="like button" />
+        <li className="photopage__card__likes">
+          <img
+            className="photopage__card__heart"
+            src={like}
+            alt="like button"
+          />
 
           {singlePhoto.likes}
         </li>
-        <li>{date.toLocaleDateString()}</li>
+        <li className="photopage__card__photographer__tablet">
+          Photo by {""}
+          {singlePhoto.photographer}
+        </li>
+        <li className="photopage__card__date">{date.toLocaleDateString()}</li>
       </ul>
-      <p>
+      <p className="photopage__card__photographer">
         Photo by {""}
         {singlePhoto.photographer}
       </p>

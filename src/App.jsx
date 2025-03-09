@@ -7,27 +7,22 @@ import Homepage from "./pages/Homepage/Homepage";
 import PhotoPage from "./pages/PhotoPage/PhotoPage";
 
 export default function App() {
-  const [tagsVisible, setTagsVisible] = useState(false);
-  const handleTagsVisbility = () => {
-    setTagsVisible(!tagsVisible);
+  const [tagsDrawerVisible, setTagsDrawerVisible] = useState(false);
+  const handleTagsDrawerVisbility = () => {
+    setTagsDrawerVisible(!tagsDrawerVisible);
   };
 
   return (
     <>
       <BrowserRouter>
         <Header
-          handleTagsVisbility={handleTagsVisbility}
-          tagsVisible={tagsVisible}
+          handleTagsDrawerVisbility={handleTagsDrawerVisbility}
+          tagsDrawerVisible={tagsDrawerVisible}
         />
         <Routes>
           <Route
             path="/"
-            element={
-              <Homepage
-                tagsVisible={tagsVisible}
-                handleTagsVisbility={handleTagsVisbility}
-              />
-            }
+            element={<Homepage tagsDrawerVisible={tagsDrawerVisible} />}
           />
           <Route path="/photo/:photoId" element={<PhotoPage />} />
         </Routes>

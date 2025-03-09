@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
 import "../Form/Form.scss";
@@ -59,8 +59,8 @@ export default function Form({ fetchComments }) {
   };
 
   return (
-    <form onSubmit={submitHandler} className="comment__form" action="">
-      <label className="comment__form__label">
+    <form onSubmit={submitHandler} className="form" action="">
+      <label className="form__label">
         Name{" "}
         <input
           name="name"
@@ -73,7 +73,7 @@ export default function Form({ fetchComments }) {
         />
         {formErrors.name && <p className="error">{formErrors.name}</p>}
       </label>
-      <label className="comment__form__label">
+      <label className="form__label">
         Comment{" "}
         <textarea
           name="comment"
@@ -86,7 +86,7 @@ export default function Form({ fetchComments }) {
         ></textarea>
         {formErrors.comment && <p className="error">{formErrors.comment}</p>}
       </label>
-      <button className="comment__form__btn">Submit</button>
+      <button className="form__btn">Submit</button>
       {/* <p>{message && message}</p> */}
     </form>
   );

@@ -36,7 +36,11 @@ export default function CommentList() {
     <>
       <Form fetchComments={fetchComments} />
       <div className="comments__wrapper">
-        <h3>{comments.length} comments</h3>
+        <h3>
+          {comments.length > 1
+            ? `${comments.length} Comments`
+            : `${comments.length} Comment`}
+        </h3>
         {comments.map((comment, index) => {
           return <Comment key={index} comment={comment} />;
         })}
