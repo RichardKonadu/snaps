@@ -14,7 +14,7 @@ export default function CommentList() {
   const fetchComments = async () => {
     try {
       const { data } = await axios.get(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`
+        `${import.meta.env.VITE_BACKEND_URL}/photos/${photoId}/comments`
       );
       const sortedComments = data.sort(
         (a, b) => new Date(b.timestamp) - new Date(a.timestamp)

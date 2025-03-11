@@ -46,7 +46,9 @@ export default function Form({ fetchComments }) {
 
     try {
       await axios.post(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`,
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/photos/${photoId}/comments?api_key=${API_KEY}`,
         formData
       );
       setFormSubmitted(true);
@@ -87,7 +89,6 @@ export default function Form({ fetchComments }) {
         {formErrors.comment && <p className="error">{formErrors.comment}</p>}
       </label>
       <button className="form__btn">Submit</button>
-      {/* <p>{message && message}</p> */}
     </form>
   );
 }

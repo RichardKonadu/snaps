@@ -10,7 +10,7 @@ export default function CardList({ selectedTag, tagsDrawerVisible }) {
   const fetchPhotos = async () => {
     try {
       const { data } = await axios.get(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=${API_KEY}`
+        `${import.meta.env.VITE_BACKEND_URL}/photos`
       );
       setPhotosList(data);
     } catch (error) {

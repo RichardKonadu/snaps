@@ -10,7 +10,7 @@ export default function TagList({ handleSelectedTag, selectedTag }) {
   const fetchTags = async () => {
     try {
       const { data } = await axios.get(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=${API_KEY}`
+        `${import.meta.env.VITE_BACKEND_URL}/tags`
       );
       console.log(data[0]);
       setTagsData(data);
