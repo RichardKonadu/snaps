@@ -9,12 +9,12 @@ const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
 
 export default function CommentList() {
   const [comments, setComments] = useState("");
-  const { photoId } = useParams();
+  const { id } = useParams();
 
   const fetchComments = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/photos/${photoId}/comments`
+        `${import.meta.env.VITE_BACKEND_URL}/photos/${id}/comments`
       );
       const sortedComments = data.sort(
         (a, b) => new Date(b.timestamp) - new Date(a.timestamp)

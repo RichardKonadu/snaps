@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import "./CardList.scss";
-const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
 import axios from "axios";
 
 export default function CardList({ selectedTag, tagsDrawerVisible }) {

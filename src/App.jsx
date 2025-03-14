@@ -24,7 +24,7 @@ export default function App() {
             path="/"
             element={<Homepage tagsDrawerVisible={tagsDrawerVisible} />}
           />
-          <Route path="/photo/:photoId" element={<PhotoPage />} />
+          <Route path="/photos/:id" element={<PhotoPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

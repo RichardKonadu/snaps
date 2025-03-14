@@ -4,18 +4,17 @@ import "../LargeCard/LargeCard.scss";
 import like from "../../assets/images/icons/Like_Outline.svg";
 import axios from "axios";
 
-const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
-
 export default function LargeCard() {
   const [singlePhoto, setSinglePhoto] = useState(null);
-  const { photoId } = useParams();
+  const { id } = useParams();
 
   const fetchPhoto = async () => {
     try {
       const { data } = await axios.get(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}?api_key=${API_KEY}`
+        `${import.meta.env.VITE_BACKEND_URL}/photos/${id}`
       );
-      setSinglePhoto(data);
+      setSinglePhoto(data); // update state
+      console.log(data); // check the updated state
     } catch (error) {
       throw error;
     }
@@ -36,14 +35,14 @@ export default function LargeCard() {
       <div className="photopage__card__image__wrapper">
         <img
           className="photopage__card__image"
-          src={singlePhoto.photo}
+          src={`${import.meta.env.VITE_BACKEND_URL}/${singlePhoto.photo}`}
           alt=""
         />
       </div>
       <ul className="photopage__card__tags">
-        {singlePhoto.tags.map((tag, index) => {
+        {singlePhoto.tags.map((tag, id) => {
           return (
-            <li key={index} className="photopage__card__tags__item">
+            <li key={id} className="photopage__card__tags__item">
               {tag}{" "}
             </li>
           );

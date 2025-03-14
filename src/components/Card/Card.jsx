@@ -6,8 +6,12 @@ export default function Card({ photo, tagsDrawerVisible }) {
     <article className={`card ${tagsDrawerVisible ? "card__active" : ""}`}>
       <div className="card__image__wrapper">
         <p className="card__photographer">{photo.photographer}</p>
-        <Link key={photo.id} to={`/photo/${photo.id}`}>
-          <img className="card__image" src={photo.photo} alt="" />
+        <Link key={photo.id} to={`/photos/${photo.id}`}>
+          <img
+            className="card__image"
+            src={`${import.meta.env.VITE_BACKEND_URL}/${photo.photo}`}
+            alt=""
+          />
         </Link>
       </div>
       <ul className="card__tags">
