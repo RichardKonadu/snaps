@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
 import "../Form/Form.scss";
 
 const initialFormData = {
@@ -14,7 +13,7 @@ export default function Form({ fetchComments }) {
   const [formErrors, setFormErrors] = useState({});
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const { photoId } = useParams();
+  const { id } = useParams();
 
   const changeHandler = (e) => {
     setFormData({
@@ -46,9 +45,7 @@ export default function Form({ fetchComments }) {
 
     try {
       await axios.post(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/photos/${photoId}/comments?api_key=${API_KEY}`,
+        `${import.meta.env.VITE_BACKEND_URL}/photos/${id}/comments`,
         formData
       );
       setFormSubmitted(true);

@@ -3,20 +3,21 @@ import { useParams } from "react-router-dom";
 import "../LargeCard/LargeCard.scss";
 import like from "../../assets/images/icons/Like_Outline.svg";
 import axios from "axios";
+import { ClipLoader } from "react-spinners";
 
 export default function LargeCard() {
   const [singlePhoto, setSinglePhoto] = useState(null);
   const { id } = useParams();
+  const [error, setError] = useState(false);
 
   const fetchPhoto = async () => {
     try {
       const { data } = await axios.get(
         `${import.meta.env.VITE_BACKEND_URL}/photos/${id}`
       );
-      setSinglePhoto(data); // update state
-      console.log(data); // check the updated state
+      setSinglePhoto(data);
     } catch (error) {
-      throw error;
+      setError(true);
     }
   };
 
@@ -24,47 +25,47 @@ export default function LargeCard() {
     fetchPhoto();
   }, []);
 
+  if (error) {
+    return <p>Some went wrong!</p>;
+  }
+
   if (!singlePhoto) {
-    return <p>Loading.....</p>;
+    return <ClipLoader />;
   }
 
   const date = new Date(singlePhoto.timestamp);
 
   return (
-    <article className="photopage__card">
-      <div className="photopage__card__image__wrapper">
+    <article className="photopage-card">
+      <div className="photopage-card__image-wrapper">
         <img
-          className="photopage__card__image"
+          className="photopage-card__image"
           src={`${import.meta.env.VITE_BACKEND_URL}/${singlePhoto.photo}`}
-          alt=""
+          alt={singlePhoto.photoDescription}
         />
       </div>
-      <ul className="photopage__card__tags">
-        {singlePhoto.tags.map((tag, id) => {
+      <ul className="photopage-card__tags">
+        {singlePhoto.tags.map((tag) => {
           return (
-            <li key={id} className="photopage__card__tags__item">
+            <li key={tag} className="photopage-card__tag">
               {tag}{" "}
             </li>
           );
         })}
       </ul>
-      <ul className="photopage__card__ul__wrapper">
-        <li className="photopage__card__likes">
-          <img
-            className="photopage__card__heart"
-            src={like}
-            alt="like button"
-          />
+      <ul className="card__ul">
+        <li className="card__likes">
+          <img className="card__heart" src={like} alt="like button" />
 
           {singlePhoto.likes}
         </li>
-        <li className="photopage__card__photographer__tablet">
+        <li className="photopage-card__photographer-tablet">
           Photo by {""}
           {singlePhoto.photographer}
         </li>
-        <li className="photopage__card__date">{date.toLocaleDateString()}</li>
+        <li className="card__date">{date.toLocaleDateString()}</li>
       </ul>
-      <p className="photopage__card__photographer">
+      <p className="photopage-card__photographer">
         Photo by {""}
         {singlePhoto.photographer}
       </p>

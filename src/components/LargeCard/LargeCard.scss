@@ -1,15 +1,11 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.photopage__card {
+.photopage-card {
   background-color: $altbackground;
   margin-bottom: 2rem;
   border-radius: 12px;
   border: solid 2px $bordercolor;
-
-  &__active {
-    width: 48%;
-  }
 
   &__image {
     width: 100%;
@@ -25,14 +21,13 @@
     @include tablet {
       display: none;
     }
+  }
+  &__photographer-tablet {
+    display: none;
 
-    &__tablet {
-      display: none;
-
-      @include tablet {
-        display: flex;
-        font-size: 1.4rem;
-      }
+    @include tablet {
+      display: flex;
+      font-size: 1.4rem;
     }
   }
 
@@ -40,25 +35,34 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
 
-    &__item {
-      background-color: white;
-      border: solid 2px $bordercolor;
-      border-radius: 10px;
-      margin: 0.5rem;
-      padding: 6px;
-      font-size: 0.8rem;
-      font-weight: 400;
-      line-height: 1rem;
+  &__tag {
+    background-color: white;
+    border: solid 2px $bordercolor;
+    border-radius: 10px;
+    margin: 0.5rem;
+    padding: 6px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1rem;
 
-      @include tablet {
-        margin: 2rem 1rem;
-        padding: 0.8rem 1.2rem;
-        font-size: 1.2rem;
-      }
+    @include tablet {
+      margin: 2rem 1rem;
+      padding: 0.8rem 1.2rem;
+      font-size: 1.2rem;
     }
   }
-  &__ul__wrapper {
+}
+
+.card {
+  &__date {
+    @include tablet {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -80,12 +84,6 @@
 
     @include tablet {
       width: 1.2rem;
-    }
-  }
-
-  &__date {
-    @include tablet {
-      font-size: 1.4rem;
     }
   }
 }

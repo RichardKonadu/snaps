@@ -9,7 +9,7 @@ export default function Footer() {
     <div className="footer">
       <div className="footer__wrapper">
         <h2 className="footer__title">Snaps</h2>
-        <div className="footer__content__wrapper">
+        <div className="footer__content-wrapper">
           <p className="footer__content">
             For photographers <br /> Hire talent <br />
             Inspiration
@@ -18,62 +18,26 @@ export default function Footer() {
             About <br /> Careers <br />
             Support
           </p>
-          <ul className="footer__social__desktop">
+          <ul className="footer__social-desktop">
             <li>
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                className="footer__social__icon"
-              >
-                <img
-                  className="footer__social__icon__image
-            "
-                  src={Facebook}
-                  alt="Facebook"
-                />
+              <a href="https://www.facebook.com/" target="_blank">
+                <img src={Facebook} alt="Facebook" />
               </a>
             </li>
             <li>
               {" "}
-              <a
-                href="https://www.twitter.com/"
-                target="_blank"
-                className="footer__social__icon"
-              >
-                <img
-                  className="footer__social__icon__image
-            "
-                  src={X}
-                  alt="Twitter"
-                />
+              <a href="https://www.twitter.com/" target="_blank">
+                <img src={X} alt="Twitter" />
               </a>
             </li>
             <li>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                className="footer__social__icon"
-              >
-                <img
-                  className="footer__social__icon__image
-            "
-                  src={Instagram}
-                  alt="Instagram"
-                />
+              <a href="https://www.instagram.com/" target="_blank">
+                <img src={Instagram} alt="Instagram" />
               </a>
             </li>
             <li>
-              <a
-                href="https://www.pinterest.com/"
-                target="_blank"
-                className="footer__social__icon"
-              >
-                <img
-                  className="footer__social__icon__image
-            "
-                  src={Pinterest}
-                  alt="Pinterest"
-                />
+              <a href="https://www.pinterest.com/" target="_blank">
+                <img src={Pinterest} alt="Pinterest" />
               </a>
             </li>
           </ul>
@@ -81,60 +45,24 @@ export default function Footer() {
       </div>
       <ul className="footer__social">
         <li>
-          <a
-            href="https://www.facebook.com/"
-            target="_blank"
-            className="footer__social__icon"
-          >
-            <img
-              className="footer__social__icon__image
-            "
-              src={Facebook}
-              alt="Facebook"
-            />
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src={Facebook} alt="Facebook" />
           </a>
         </li>
         <li>
           {" "}
-          <a
-            href="https://www.twitter.com/"
-            target="_blank"
-            className="footer__social__icon"
-          >
-            <img
-              className="footer__social__icon__image
-            "
-              src={X}
-              alt="Twitter"
-            />
+          <a href="https://www.twitter.com/" target="_blank">
+            <img src={X} alt="Twitter" />
           </a>
         </li>
         <li>
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            className="footer__social__icon"
-          >
-            <img
-              className="footer__social__icon__image
-            "
-              src={Instagram}
-              alt="Instagram"
-            />
+          <a href="https://www.instagram.com/" target="_blank">
+            <img src={Instagram} alt="Instagram" />
           </a>
         </li>
         <li>
-          <a
-            href="https://www.pinterest.com/"
-            target="_blank"
-            className="footer__social__icon"
-          >
-            <img
-              className="footer__social__icon__image
-            "
-              src={Pinterest}
-              alt="Pinterest"
-            />
+          <a href="https://www.pinterest.com/" target="_blank">
+            <img src={Pinterest} alt="Pinterest" />
           </a>
         </li>
       </ul>

@@ -13,21 +13,19 @@ export default function App() {
   };
 
   return (
-    <>
-      <BrowserRouter>
-        <Header
-          handleTagsDrawerVisbility={handleTagsDrawerVisbility}
-          tagsDrawerVisible={tagsDrawerVisible}
+    <BrowserRouter>
+      <Header
+        handleTagsDrawerVisbility={handleTagsDrawerVisbility}
+        tagsDrawerVisible={tagsDrawerVisible}
+      />
+      <Routes>
+        <Route
+          path="/"
+          element={<Homepage tagsDrawerVisible={tagsDrawerVisible} />}
         />
-        <Routes>
-          <Route
-            path="/"
-            element={<Homepage tagsDrawerVisible={tagsDrawerVisible} />}
-          />
-          <Route path="/photos/:id" element={<PhotoPage />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </>
+        <Route path="/photos/:id" element={<PhotoPage />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }

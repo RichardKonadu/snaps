@@ -3,21 +3,21 @@ import "./Card.scss";
 
 export default function Card({ photo, tagsDrawerVisible }) {
   return (
-    <article className={`card ${tagsDrawerVisible ? "card__active" : ""}`}>
-      <div className="card__image__wrapper">
+    <article className={`card ${tagsDrawerVisible ? "card--active" : ""}`}>
+      <div className="card__image-wrapper">
         <p className="card__photographer">{photo.photographer}</p>
-        <Link key={photo.id} to={`/photos/${photo.id}`}>
+        <Link to={`/photos/${photo.id}`}>
           <img
             className="card__image"
             src={`${import.meta.env.VITE_BACKEND_URL}/${photo.photo}`}
-            alt=""
+            alt={photo.photoDescription}
           />
         </Link>
       </div>
       <ul className="card__tags">
-        {photo.tags.map((tag, index) => {
+        {photo.tags.map((tag) => {
           return (
-            <li key={index} className="card__tags__item">
+            <li key={tag} className="card__tags-item">
               {tag}{" "}
             </li>
           );

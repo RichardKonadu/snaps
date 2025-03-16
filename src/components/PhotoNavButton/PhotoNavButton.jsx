@@ -5,7 +5,7 @@ import "../PhotoNavButton/PhotoNavButton.scss";
 export default function PhotoNavButton() {
   return (
     <Link to={"/"}>
-      <button className="photonav__btn">
+      <button className="photo-nav__btn">
         {" "}
         <img src={arrowSvg} alt="" />
         Home

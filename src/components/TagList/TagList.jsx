@@ -2,7 +2,6 @@ import "./TagList.scss";
 import Tag from "../Tag/Tag";
 import { useEffect, useState } from "react";
 import axios from "axios";
-const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
 
 export default function TagList({ handleSelectedTag, selectedTag }) {
   const [tagsData, setTagsData] = useState(null);

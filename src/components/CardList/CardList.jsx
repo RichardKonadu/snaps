@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import "./CardList.scss";
 import axios from "axios";
+import { ClipLoader } from "react-spinners";
 
 export default function CardList({ selectedTag, tagsDrawerVisible }) {
   const [photosList, setPhotosList] = useState(null);
@@ -22,7 +23,7 @@ export default function CardList({ selectedTag, tagsDrawerVisible }) {
   }, []);
 
   if (!photosList) {
-    return;
+    return <ClipLoader />;
   }
 
   const filteredPhotos = photosList.filter((photo) => {
@@ -34,11 +35,11 @@ export default function CardList({ selectedTag, tagsDrawerVisible }) {
   });
 
   return (
-    <div className="cardlist">
-      {filteredPhotos.map((photo, index) => {
+    <div className="card-list">
+      {filteredPhotos.map((photo) => {
         return (
           <Card
-            key={index}
+            key={photo.id}
             photo={photo}
             tagsDrawerVisible={tagsDrawerVisible}
           />

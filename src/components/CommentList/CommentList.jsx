@@ -4,8 +4,7 @@ import { useParams } from "react-router-dom";
 import Comment from "../../components/Comment/Comment";
 import Form from "../Form/Form";
 import "../CommentList/CommentList.scss";
-
-const API_KEY = "4eca160b-03d9-48da-9c9b-80ca921f8809";
+import { ClipLoader } from "react-spinners";
 
 export default function CommentList() {
   const [comments, setComments] = useState("");
@@ -16,9 +15,7 @@ export default function CommentList() {
       const { data } = await axios.get(
         `${import.meta.env.VITE_BACKEND_URL}/photos/${id}/comments`
       );
-      const sortedComments = data.sort(
-        (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
-      );
+      const sortedComments = data.sort((a, b) => b.timestamp - a.timestamp);
       setComments(sortedComments);
     } catch (error) {
       throw error;
@@ -30,7 +27,7 @@ export default function CommentList() {
   }, []);
 
   if (!comments) {
-    return <p>Loading...</p>;
+    return <ClipLoader />;
   }
 
   return (
